@@ -27,6 +27,6 @@ def chmod(file_path, mode):
 
 # Example usage:
 # Change permissions of example.txt to rwxr-xr-x (755)
-chmod("example.txt", 0o755)
+chmod("0x04-python-more_data_structures", 0o755)
 # Or using symbolic mode
-chmod("example.txt", "u+rwx,g+rx,o+rx")
+chmod("0x04-python-more_data_structures", "u+rwx,g+rx,o+rx")
