@@ -9,7 +9,7 @@ def change_permissions(file_path, permissions):
 
 if __name__ == "__main__":
     # Specify the file path and permissions
-    file_path = "C:\Users\saadoun\Desktop\0x04-python-more-data-structures"
+    file_path = "C:\Users\saadoun\Desktop\0x04-python-more-data-structures\alx-higher_level_programming\0x04-python-more_data_structures"
     permissions = 0o755  # Numeric mode for rwxr-xr-x
 
     # Call the function to change permissions
