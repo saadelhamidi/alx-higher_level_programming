@@ -1,0 +1,55 @@
+**************************************
+Test cases for say_my_name module
+**************************************
+===============================================================
+First import 'say_my_name' from the '3-say_my_name' module:
+    
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+===============================================================
+check module docstring:
+
+    >>> m = __import__("3-say_my_name").__doc__
+    >>> len(m) > 1
+    True
+
+===============================================================
+check function docstring:
+
+    >>> f = __import__("3-say_my_name").say_my_name.__doc__
+    >>> len(f) > 1
+    True
+
+===============================================================
+
+    >>> say_my_name("Walter", "white")
+    My name is Walter white
+
+    >>> say_my_name("Walter")
+    My name is Walter 
+
+    >>> say_my_name("Walter", 0)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+    >>> say_my_name(0, "white")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name(0, 0)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name("", "")
+    My name is  
+
+    >>> say_my_name("", "white")
+    My name is  white
+
+    >>> say_my_name()
+    Traceback (most recent call last):
+    ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
