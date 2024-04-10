@@ -1,0 +1,148 @@
+**************************************
+Test cases for the add_integer module
+**************************************
+===============================================================
+First import ``add_integer`` from the ``0-add_integer`` module:
+    
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+===============================================================
+check module docstring:
+
+    >>> m = __import__("0-add_integer").__doc__
+    >>> len(m) > 1
+    True
+
+===============================================================
+check function docstring:
+
+    >>> f = __import__("0-add_integer").add_integer.__doc__
+    >>> len(f) > 1
+    True
+
+===============================================================
+Adding two integers:
+
+    >>> add_integer(6, 3)
+    9
+
+===============================================================
+Adding a float to int:
+
+    >>> add_integer(7.5, 2)
+    9
+
+===============================================================
+Adding a int to float:
+
+    >>> add_integer(1, 5.5)
+    6
+
+===============================================================
+Adding a float to float:
+
+    >>> add_integer(7.5, 2.5)
+    9
+
+===============================================================
+negative add:
+
+    >>> add_integer(6, -2)
+    4
+
+===============================================================
+negative add:
+
+    >>> add_integer(-6, 2)
+    -4
+
+===============================================================
+one argument:
+
+    >>> add_integer(2)
+    100
+
+===============================================================
+one argument (negative):
+
+    >>> add_integer(-8)
+    90
+
+===============================================================
+one argument (float):
+
+    >>> add_integer(2.5)
+    100
+
+===============================================================
+no argument:
+
+    >>> add_integer()
+    Traceback (most recent call last):
+    ...
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+
+===============================================================
+Float overflow:
+
+    >>> add_integer(1e308, 1e555)
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
+
+    >>> add_integer(float('inf'))
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
+
+===============================================================
+Float NaN
+
+    >>> add_integer(float('NaN'))
+    Traceback (most recent call last):
+    ...
+    ValueError: cannot convert float NaN to integer
+
+===============================================================
+types tests:
+===============================================================
+None as argument:
+
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+===============================================================
+b is None
+
+    >>> add_integer(4, None)
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+===============================================================
+a is string
+
+    >>> add_integer("5", 5)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+===============================================================
+b is string
+
+    >>> add_integer(5, "5")
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+===============================================================
+add two strings
+
+    >>> add_integer("5", "5")
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+===============================================================
