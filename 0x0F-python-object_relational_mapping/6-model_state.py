@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""Start link class to table in database 
-"""
+"""Start link class to table in database"""
 from sys import argv
 from sqlalchemy import (create_engine)
 from model_state import Base, State
